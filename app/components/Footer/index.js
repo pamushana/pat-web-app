@@ -40,20 +40,64 @@ class Footer extends React.PureComponent {
           backgroundColor: '#480D0E',
         }}
       >
-      <Container text style={{ color: '#FFF'}}>
-          <Grid columns='4' divided>
+          <Container text style={{ color: '#FFF' }}>
+          <Grid columns="4" divided>
             <Grid.Row>
-              <Grid.Column><Header as='h5'><a style={{ color: 'orange'}}>Commute Routes</a></Header></Grid.Column>
-              <Grid.Column><Header as='h5'><a style={{ color: 'orange'}}>Tours</a></Header></Grid.Column>
-              <Grid.Column><Header as='h5'><a style={{ color: 'orange'}}>Pre-Paid Account</a></Header></Grid.Column>
-              <Grid.Column><Header as='h5'><a style={{ color: 'orange'}}>Hiring</a></Header></Grid.Column>
-              <Grid.Column><Header as='h5'><a style={{ color: 'orange'}}>Promotions</a></Header></Grid.Column>
-              <Grid.Column><Header as='h5'><a style={{ color: 'orange'}}>Advertising</a></Header></Grid.Column>
-              <Grid.Column><Header as='h5'><a style={{ color: 'orange'}}>Management</a></Header></Grid.Column>
-              <Grid.Column><Header as='h5'><a style={{ color: 'orange'}}>Divisons</a></Header></Grid.Column>
-              <Grid.Column><Header as='h5'><a style={{ color: 'orange'}}>Gallery</a></Header></Grid.Column>
-              <Grid.Column ><Header as='h5'><a style={{ color: 'orange'}}>Blog</a></Header></Grid.Column>
-              <Grid.Column ><Header as='h5'><a style={{ color: 'orange'}}>Fleet</a></Header></Grid.Column>
+              <Grid.Column>
+                <Header as="h5">
+                  <a style={{ color: 'orange' }}>Commute Routes</a>
+                </Header>
+              </Grid.Column>
+              <Grid.Column>
+                <Header as="h5">
+                  <a style={{ color: 'orange' }}>Tours</a>
+                </Header>
+              </Grid.Column>
+              <Grid.Column>
+                <Header as="h5">
+                  <a style={{ color: 'orange' }}>Pre-Paid Account</a>
+                </Header>
+              </Grid.Column>
+              <Grid.Column>
+                <Header as="h5">
+                  <a style={{ color: 'orange' }}>Hiring</a>
+                </Header>
+              </Grid.Column>
+              <Grid.Column>
+                <Header as="h5">
+                  <a style={{ color: 'orange' }}>Promotions</a>
+                </Header>
+              </Grid.Column>
+              <Grid.Column>
+                <Header as="h5">
+                  <a style={{ color: 'orange' }}>Advertising</a>
+                </Header>
+              </Grid.Column>
+              <Grid.Column>
+                <Header as="h5">
+                  <a style={{ color: 'orange' }}>Management</a>
+                </Header>
+              </Grid.Column>
+              <Grid.Column>
+                <Header as="h5">
+                  <a style={{ color: 'orange' }}>Divisons</a>
+                </Header>
+              </Grid.Column>
+              <Grid.Column>
+                <Header as="h5">
+                  <a style={{ color: 'orange' }}>Gallery</a>
+                </Header>
+              </Grid.Column>
+              <Grid.Column>
+                <Header as="h5">
+                  <a style={{ color: 'orange' }}>Careers</a>
+                </Header>
+              </Grid.Column>
+              <Grid.Column>
+                <Header as="h5">
+                  <a style={{ color: 'orange' }}>Fleet</a>
+                </Header>
+              </Grid.Column>
             </Grid.Row>
           </Grid>
         </Container>

@@ -291,8 +291,8 @@ class Header extends React.PureComponent {
                           <HeaderLink to="/gallery" discover>
                             Gallery
                           </HeaderLink>
-                          <HeaderLink to="/blog" discover>
-                            Blog
+                          <HeaderLink to="/careers" discover>
+                            Careers
                           </HeaderLink>
                         </Grid.Column>
                       </Grid.Row>

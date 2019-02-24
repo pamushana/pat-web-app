@@ -23,7 +23,7 @@ import FleetPage from 'containers/FleetPage/Loadable';
 import ValuesPage from 'containers/ValuesPage/Loadable';
 import GalleryPage from 'containers/GalleryPage/Loadable';
 import DivisionsPage from 'containers/DivisionsPage/Loadable';
-import BlogPage from 'containers/BlogPage/Loadable';
+import CareersPage from 'containers/CareersPage/Loadable';
 
 import ContactPage from 'containers/ContactPage/Loadable';
 import FeedbackPage from 'containers/FeedbackPage/Loadable';
@@ -63,7 +63,7 @@ export default function App() {
         <Route path="/values" component={ValuesPage} />
         <Route path="/gallery" component={GalleryPage} />
         <Route path="/divisions" component={DivisionsPage} />
-        <Route path="/blog" component={BlogPage} />
+        <Route path="/careers" component={CareersPage} />
 
         <Route path="/feedback" component={FeedbackPage} />
         <Route path="/contact" component={ContactPage} />

@@ -14,19 +14,26 @@ import { Card, Icon, Image, Container, Header } from 'semantic-ui-react';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
+import Boss from 'images/boss.jpg';
 import makeSelectTeamPage from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 import messages from './messages';
 
-import Boss from 'images/boss.jpg';
 import Madam from 'images/madam2.jpg';
 
 /* eslint-disable react/prefer-stateless-function */
 export class TeamPage extends React.PureComponent {
   render() {
     return (
-      <Container style={{ marginTop: '6em', marginBottom: '3em', paddingLeft: '4em', paddingRight: '4em' }}>
+      <Container
+        style={{
+          marginTop: '6em',
+          marginBottom: '3em',
+          paddingLeft: '4em',
+          paddingRight: '4em',
+        }}
+      >
         <Header as="h2">
           <Icon name="users" color="red" />
           <Header.Content>
@@ -37,45 +44,46 @@ export class TeamPage extends React.PureComponent {
           </Header.Content>
         </Header>
         <Card.Group itemsPerRow={3} style={{ padding: '2em' }}>
-          <Card raised color='red'>
+          <Card raised color="red">
             <Image src={Boss} />
             <Card.Content>
-              <Card.Header>Hardlife T. Chipika</Card.Header>
+              <Card.Header>Tatenda H. Chipika</Card.Header>
               <Card.Meta>Joined in 2010</Card.Meta>
               <Card.Description>
-                Hardlife is the visionary CEO and founder behind Pamushana Africa
+                Tatenda is the visionary CEO and founder behind Pamushana Africa
               </Card.Description>
             </Card.Content>
             <Card.Content extra>
               <a>
-                <Icon name="facebook official" size='large' />
+                <Icon name="facebook official" size="large" />
               </a>
               <a>
-                <Icon name="twitter square" size='large' />
+                <Icon name="twitter square" size="large" />
               </a>
               <a>
-                <Icon name="linkedin square" size='large' />
+                <Icon name="linkedin square" size="large" />
               </a>
             </Card.Content>
           </Card>
-          <Card raised color='red'>
+          <Card raised color="red">
             <Image src={Madam} />
             <Card.Content>
               <Card.Header>Clarisa Chipika</Card.Header>
               <Card.Meta>Joined in 2010</Card.Meta>
               <Card.Description>
-                Clarisa is the HR and Business Development Manager of Pamushana Africa
+                Clarisa is the HR and Business Development Manager of Pamushana
+                Africa
               </Card.Description>
             </Card.Content>
             <Card.Content extra>
               <a>
-                <Icon name="facebook official" size='large' />
+                <Icon name="facebook official" size="large" />
               </a>
               <a>
-                <Icon name="twitter square" size='large' />
+                <Icon name="twitter square" size="large" />
               </a>
               <a>
-                <Icon name="linkedin square" size='large' />
+                <Icon name="linkedin square" size="large" />
               </a>
             </Card.Content>
           </Card>

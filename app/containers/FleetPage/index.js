@@ -441,16 +441,6 @@ export class FleetPage extends React.PureComponent {
             </Grid.Column>
           </Grid>
         </Segment>
-        <Segment raised style={{ margin: '4em' }}>
-          <Grid textAlign='right'>
-            <Grid.Column width={8}>
-              <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
-            </Grid.Column>
-            <Grid.Column width={7}>
-              <Image src={Lukaku} />
-            </Grid.Column>
-          </Grid>
-        </Segment>
       </Container>
     );
   }

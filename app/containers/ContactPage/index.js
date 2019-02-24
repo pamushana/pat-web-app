@@ -10,25 +10,51 @@ import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
-import { Segment, Menu, Image, Icon, Input, Select, TextArea, Container, Header, Card, Grid, Form, Radio, Button, Accordion } from 'semantic-ui-react';
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps";
+import {
+  Segment,
+  Menu,
+  Image,
+  Icon,
+  Input,
+  Select,
+  TextArea,
+  Container,
+  Header,
+  Card,
+  Grid,
+  Form,
+  Label,
+  Radio,
+  Button,
+  Accordion,
+} from 'semantic-ui-react';
+import {
+  withScriptjs,
+  withGoogleMap,
+  GoogleMap,
+  Marker,
+} from 'react-google-maps';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
+import Boss from 'images/boss.jpg';
+import Madam from 'images/madam2.jpg';
 import makeSelectContactPage from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 import messages from './messages';
-
-
-const MyMapComponent = withScriptjs(withGoogleMap((props) =>
-  <GoogleMap
-    defaultZoom={16}
-    defaultCenter={{ lat: -17.801868, lng: 31.002553 }}
-  >
-    {props.isMarkerShown && <Marker position={{ lat: -17.801868, lng: 31.002553 }} />}
-  </GoogleMap>
-))
+const MyMapComponent = withScriptjs(
+  withGoogleMap(props => (
+    <GoogleMap
+      defaultZoom={16}
+      defaultCenter={{ lat: -17.801868, lng: 31.002553 }}
+    >
+      {props.isMarkerShown && (
+        <Marker position={{ lat: -17.801868, lng: 31.002553 }} />
+      )}
+    </GoogleMap>
+  )),
+);
 const genderOptions = [
   {
     key: 'm',
@@ -43,7 +69,7 @@ const genderOptions = [
 ];
 /* eslint-disable react/prefer-stateless-function */
 export class ContactPage extends React.PureComponent {
-  state = { activeIndex: 0 }
+  state = { activeIndex: 0 };
 
   handleClick = (e, titleProps) => {
     const { index } = titleProps;
@@ -56,7 +82,14 @@ export class ContactPage extends React.PureComponent {
   render() {
     const { activeIndex } = this.state;
     return (
-      <Container style={{ marginTop: '6em', marginBottom: '3em', paddingLeft: '4em', paddingRight: '4em' }}>
+      <Container
+        style={{
+          marginTop: '6em',
+          marginBottom: '3em',
+          paddingLeft: '4em',
+          paddingRight: '4em',
+        }}
+      >
         <Header as="h3">
           <Icon name="question" color="orange" />
           <Header.Content>
@@ -66,27 +99,38 @@ export class ContactPage extends React.PureComponent {
             </Header.Subheader>
           </Header.Content>
         </Header>
-        <Container style={{ margin: '4em', paddingLeft: '4em', paddingRight: '4em' }}>
+        <Container
+          style={{ margin: '4em', paddingLeft: '4em', paddingRight: '4em' }}
+        >
           <Accordion fluid styled>
-            <Accordion.Title active={activeIndex === 0} index={0} onClick={this.handleClick}>
-              <Icon name='dropdown' />
+            <Accordion.Title
+              active={activeIndex === 0}
+              index={0}
+              onClick={this.handleClick}
+            >
+              <Icon name="dropdown" />
               Where does Pamushana Africa operate ?
             </Accordion.Title>
             <Accordion.Content active={activeIndex === 0}>
               <Container text>
-                Pamushana Africa is a privately held diversified group with operations and investment across Zimbabwe.
-                Please go to our operating zones and our corporate pages to learn more
+                Pamushana Africa is a privately held diversified group with
+                operations and investment across Zimbabwe. Please go to our
+                operating zones and our corporate pages to learn more
               </Container>
             </Accordion.Content>
 
-            <Accordion.Title active={activeIndex === 1} index={1} onClick={this.handleClick}>
-              <Icon name='dropdown' />
+            <Accordion.Title
+              active={activeIndex === 1}
+              index={1}
+              onClick={this.handleClick}
+            >
+              <Icon name="dropdown" />
               Where are the Pamushana Africa headquarters?
             </Accordion.Title>
             <Accordion.Content active={activeIndex === 1}>
               <Container text>
                 <Grid>
-                  <Grid.Column width={8} verticalAlign='middle'>
+                  <Grid.Column width={8} verticalAlign="middle">
                     <p>Pamushana House</p>
                     <p>2 Lauchlan Avenue</p>
                     <p>Meyrick Park</p>
@@ -94,58 +138,85 @@ export class ContactPage extends React.PureComponent {
                     <p>Zimbabwe</p>
                   </Grid.Column>
                   <Grid.Column width={8}>
-                  <Segment fluid>
-                    <MyMapComponent
-                      isMarkerShown
-                      googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyA05HkBJddTEsc7x960AXP_OsLjFiWPeb8&v=3.exp&libraries=geometry,drawing,places"
-                      loadingElement={<div style={{ height: `100%` }} />}
-                      containerElement={<div style={{ height: `300px` }} />}
-                      mapElement={<div style={{ height: `100%` }} />}
-                    />
+                    <Segment fluid>
+                      <MyMapComponent
+                        isMarkerShown
+                        googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyA05HkBJddTEsc7x960AXP_OsLjFiWPeb8&v=3.exp&libraries=geometry,drawing,places"
+                        loadingElement={<div style={{ height: `100%` }} />}
+                        containerElement={<div style={{ height: `300px` }} />}
+                        mapElement={<div style={{ height: `100%` }} />}
+                      />
                     </Segment>
                   </Grid.Column>
                 </Grid>
               </Container>
             </Accordion.Content>
 
-            <Accordion.Title active={activeIndex === 2} index={2} onClick={this.handleClick}>
-              <Icon name='dropdown' />
+            <Accordion.Title
+              active={activeIndex === 2}
+              index={2}
+              onClick={this.handleClick}
+            >
+              <Icon name="dropdown" />
               How was Pamushana Africa founded?
             </Accordion.Title>
             <Accordion.Content active={activeIndex === 2}>
               <Container text>
-                Pamushana Africa was founded in 2004 by Hardlife T. Chipika, who first came to prominence when he launched a new way of doing business leading to the ease of commuting on the local routes of Zimbabwe’s capital.
-                This was regarded as one of the milestones in the commuting industry.
+                Pamushana Africa was founded in 2004 by Hardlife T. Chipika, who
+                first came to prominence when he launched a new way of doing
+                business leading to the ease of commuting on the local routes of
+                Zimbabwe’s capital. This was regarded as one of the milestones
+                in the commuting industry.
               </Container>
             </Accordion.Content>
 
-            <Accordion.Title active={activeIndex === 3} index={3} onClick={this.handleClick}>
-              <Icon name='dropdown' />
+            <Accordion.Title
+              active={activeIndex === 3}
+              index={3}
+              onClick={this.handleClick}
+            >
+              <Icon name="dropdown" />
               What are the Pamushana Africa subsidiaries ?
             </Accordion.Title>
             <Accordion.Content active={activeIndex === 3}>
               <Container text>
-                Pamushana Africa subsidiaries include Pamushana Africa Transport, Pamushana Africa Agriculture and Pamushana Africa Security.
+                Pamushana Africa subsidiaries include Pamushana Africa
+                Transport, Pamushana Africa Agriculture and Pamushana Africa
+                Security.
               </Container>
             </Accordion.Content>
 
-            <Accordion.Title active={activeIndex === 4} index={4} onClick={this.handleClick}>
-              <Icon name='dropdown' />
+            <Accordion.Title
+              active={activeIndex === 4}
+              index={4}
+              onClick={this.handleClick}
+            >
+              <Icon name="dropdown" />
               What is Pamushana Africa approach to corporate responsibility?
             </Accordion.Title>
             <Accordion.Content active={activeIndex === 4}>
               <Container text>
-                Pamushana Africa has a strong legacy of ongoing commitment to practicing the principles of Corporate Responsibility.Over the years, PamushanaAfrica has developed many programs which have spearheaded transformation in the lives of thousands of individuals and communities.
+                Pamushana Africa has a strong legacy of ongoing commitment to
+                practicing the principles of Corporate Responsibility.Over the
+                years, PamushanaAfrica has developed many programs which have
+                spearheaded transformation in the lives of thousands of
+                individuals and communities.
               </Container>
             </Accordion.Content>
 
-            <Accordion.Title active={activeIndex === 5} index={5} onClick={this.handleClick}>
-              <Icon name='dropdown' />
-              Where can I learn about opportunities within the Pamushana Africa Group
+            <Accordion.Title
+              active={activeIndex === 5}
+              index={5}
+              onClick={this.handleClick}
+            >
+              <Icon name="dropdown" />
+              Where can I learn about opportunities within the Pamushana Africa
+              Group
             </Accordion.Title>
             <Accordion.Content active={activeIndex === 5}>
               <Container text>
-                Please visit the Careers section of the website to learn more about current openings within the company.
+                Please visit the Careers section of the website to learn more
+                about current openings within the company.
               </Container>
             </Accordion.Content>
           </Accordion>
@@ -154,9 +225,7 @@ export class ContactPage extends React.PureComponent {
           <Icon name="envelope" color="orange" />
           <Header.Content>
             WebMail
-            <Header.Subheader>
-              Send us a web mail now
-            </Header.Subheader>
+            <Header.Subheader>Send us a web mail now</Header.Subheader>
           </Header.Content>
         </Header>
         <Segment style={{ margin: '4em', background: 'olive' }}>
@@ -215,66 +284,76 @@ export class ContactPage extends React.PureComponent {
           </Header.Content>
         </Header>
         <Segment style={{ margin: '4em' }}>
-          <Card.Group>
+          <Card.Group itemsPerRow={2}>
             <Card>
               <Card.Content>
-                <Image floated='right' size='mini' src='https://react.semantic-ui.com/images/avatar/large/steve.jpg' />
-                <Card.Header>Steve Sanders</Card.Header>
-                <Card.Meta>Friends of Elliot</Card.Meta>
+                <Image floated="right" size="mini" src={Madam} />
+                <Card.Header>Lisa Chipika</Card.Header>
+                <Card.Meta>Co-Founder</Card.Meta>
                 <Card.Description>
-                  Steve wants to add you to the group <strong>best friends</strong>
+                  Lisa is the HR and Business Development Manager of Pamushana
+                  Africa
                 </Card.Description>
               </Card.Content>
               <Card.Content extra>
-                <div className='ui two buttons'>
-                  <Button basic color='green'>
-                    Approve
+                <Button.Group fluid>
+                  <Button animated>
+                    <Button.Content visible>Call</Button.Content>
+                    <Button.Content hidden>0772263868</Button.Content>
                   </Button>
-                  <Button basic color='red'>
-                    Decline
+                  <Button.Or />
+                  <Button animated positive>
+                    <Button.Content visible>Email</Button.Content>
+                    <Button.Content hidden>
+                      lisa@pamushanaafrica.com
+                    </Button.Content>
                   </Button>
-                </div>
+                </Button.Group>
               </Card.Content>
             </Card>
             <Card>
               <Card.Content>
-                <Image floated='right' size='mini' src='https://react.semantic-ui.com/images/avatar/large/molly.png' />
-                <Card.Header>Molly Thomas</Card.Header>
-                <Card.Meta>New User</Card.Meta>
+                <Image floated="right" size="mini" src={Boss} />
+                <Card.Header>Tatenda Chipika</Card.Header>
+                <Card.Meta>C.E.O</Card.Meta>
                 <Card.Description>
-                  Molly wants to add you to the group <strong>musicians</strong>
+                  Tatenda is the co-founder of Pamushana Africa Group.
                 </Card.Description>
               </Card.Content>
               <Card.Content extra>
-                <div className='ui two buttons'>
-                  <Button basic color='green'>
-                    Approve
+                <Button.Group fluid>
+                  <Button animated>
+                    <Button.Content visible>Call</Button.Content>
+                    <Button.Content hidden>0773205674</Button.Content>
                   </Button>
-                  <Button basic color='red'>
-                    Decline
+                  <Button.Or />
+                  <Button animated positive>
+                    <Button.Content visible>Email</Button.Content>
+                    <Button.Content hidden>
+                      htc@pamushanaafrica.com
+                    </Button.Content>
                   </Button>
-                </div>
-              </Card.Content>
-            </Card>
-            <Card>
-              <Card.Content>
-                <Image floated='right' size='mini' src='https://react.semantic-ui.com/images/avatar/large/jenny.jpg' />
-                <Card.Header>Jenny Lawrence</Card.Header>
-                <Card.Meta>New User</Card.Meta>
-                <Card.Description>Jenny requested permission to view your contact details</Card.Description>
-              </Card.Content>
-              <Card.Content extra>
-                <div className="ui two buttons">
-                  <Button basic color='green'>
-                    Approve
-                  </Button>
-                  <Button basic color='red'>
-                    Decline
-                  </Button>
-                </div>
+                </Button.Group>
               </Card.Content>
             </Card>
           </Card.Group>
+          <Container textAlign="center" style={{ marginTop: '1em' }}>
+            <Label as="a" color="violet">
+              <Icon name="facebook f" /> @PamAfriGroup
+            </Label>
+            <Label as="a" color="blue">
+              <Icon name="twitter" /> @pamafrigroup
+            </Label>
+            <Label as="a" color="green">
+              <Icon name="phone" /> 0773205674 / 0772263868
+            </Label>
+            <Label as="a" color="orange">
+              <Icon name="globe" /> www.pamushanaafrica.com
+            </Label>
+            <Label as="a" color="red">
+              <Icon name="mail" /> wecare@pamushanaafrica.com
+            </Label>
+          </Container>
         </Segment>
       </Container>
     );
