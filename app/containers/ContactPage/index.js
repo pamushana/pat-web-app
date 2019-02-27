@@ -90,7 +90,7 @@ export class ContactPage extends React.PureComponent {
           paddingRight: '4em',
         }}
       >
-        <Header as="h3">
+        <Header as="h2">
           <Icon name="question" color="orange" />
           <Header.Content>
             Frequently Asked Questions
@@ -287,7 +287,7 @@ export class ContactPage extends React.PureComponent {
           <Card.Group itemsPerRow={2}>
             <Card>
               <Card.Content>
-                <Image floated="right" size="mini" src={Madam} />
+                <Image floated="right" size="tiny" src={Madam} rounded/>
                 <Card.Header>Lisa Chipika</Card.Header>
                 <Card.Meta>Co-Founder</Card.Meta>
                 <Card.Description>
@@ -297,13 +297,13 @@ export class ContactPage extends React.PureComponent {
               </Card.Content>
               <Card.Content extra>
                 <Button.Group fluid>
-                  <Button animated>
-                    <Button.Content visible>Call</Button.Content>
+                  <Button animated='fade'>
+                    <Button.Content visible><Icon name='call' /></Button.Content>
                     <Button.Content hidden>0772263868</Button.Content>
                   </Button>
                   <Button.Or />
-                  <Button animated positive>
-                    <Button.Content visible>Email</Button.Content>
+                  <Button animated='fade' positive>
+                    <Button.Content visible><Icon name='mail' /></Button.Content>
                     <Button.Content hidden>
                       lisa@pamushanaafrica.com
                     </Button.Content>
@@ -313,7 +313,7 @@ export class ContactPage extends React.PureComponent {
             </Card>
             <Card>
               <Card.Content>
-                <Image floated="right" size="mini" src={Boss} />
+                <Image floated="right" size="tiny" src={Boss} rounded/>
                 <Card.Header>Tatenda Chipika</Card.Header>
                 <Card.Meta>C.E.O</Card.Meta>
                 <Card.Description>
@@ -322,13 +322,13 @@ export class ContactPage extends React.PureComponent {
               </Card.Content>
               <Card.Content extra>
                 <Button.Group fluid>
-                  <Button animated>
-                    <Button.Content visible>Call</Button.Content>
+                  <Button animated='fade'>
+                    <Button.Content visible><Icon name='call' /></Button.Content>
                     <Button.Content hidden>0773205674</Button.Content>
                   </Button>
                   <Button.Or />
-                  <Button animated positive>
-                    <Button.Content visible>Email</Button.Content>
+                  <Button animated='fade' positive>
+                    <Button.Content visible><Icon name='mail' /></Button.Content>
                     <Button.Content hidden>
                       htc@pamushanaafrica.com
                     </Button.Content>

@@ -14,13 +14,13 @@ import { Card, Icon, Image, Container, Header } from 'semantic-ui-react';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
-import Boss from 'images/boss.jpg';
+import Boss from 'images/boss1.jpg';
 import makeSelectTeamPage from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 import messages from './messages';
 
-import Madam from 'images/madam2.jpg';
+import Madam from 'images/madam3.jpg';
 
 /* eslint-disable react/prefer-stateless-function */
 export class TeamPage extends React.PureComponent {

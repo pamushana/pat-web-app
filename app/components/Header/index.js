@@ -207,7 +207,7 @@ class Header extends React.PureComponent {
                             circular
                             style={{ marginTop: '10px', marginBottom: '10px' }}
                           >
-                            Kariba
+                            Lake Kariba
                           </Label>
                           <Label
                             as="a"
@@ -236,7 +236,7 @@ class Header extends React.PureComponent {
                             circular
                             style={{ marginTop: '10px', marginBottom: '10px' }}
                           >
-                            Vumba Mountains
+                            National Parks
                           </Label>
                           <Label
                             as="a"
@@ -245,7 +245,7 @@ class Header extends React.PureComponent {
                             circular
                             style={{ marginTop: '10px', marginBottom: '10px' }}
                           >
-                            Nyanga
+                            Eastern Highlands
                           </Label>
                         </Grid.Column>
                       </Grid.Row>
