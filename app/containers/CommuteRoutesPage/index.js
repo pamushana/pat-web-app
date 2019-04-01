@@ -10,29 +10,42 @@ import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
-
+import Iframe from 'react-iframe';
 import { Segment, Container, Header, Icon } from 'semantic-ui-react';
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+import {
+  withScriptjs,
+  withGoogleMap,
+  GoogleMap,
+  Marker,
+} from 'react-google-maps';
 import makeSelectCommuteRoutesPage from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 import messages from './messages';
 
-const MyMapComponent = withScriptjs(withGoogleMap((props) =>
-  <GoogleMap
-    defaultZoom={8}
-    defaultCenter={{ lat: -34.397, lng: 150.644 }}
-  >
-    {props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} />}
-  </GoogleMap>
-))
+const MyMapComponent = withScriptjs(
+  withGoogleMap(props => (
+    <GoogleMap defaultZoom={8} defaultCenter={{ lat: -34.397, lng: 150.644 }}>
+      {props.isMarkerShown && (
+        <Marker position={{ lat: -34.397, lng: 150.644 }} />
+      )}
+    </GoogleMap>
+  )),
+);
 /* eslint-disable react/prefer-stateless-function */
 export class CommuteRoutesPage extends React.PureComponent {
   render() {
     return (
-      <Container style={{ marginTop: '6em', marginBottom: '3em', paddingLeft: '4em', paddingRight: '4em' }}>
+      <Container
+        style={{
+          marginTop: '6em',
+          marginBottom: '3em',
+          paddingLeft: '4em',
+          paddingRight: '4em',
+        }}
+      >
         <Header as="h2">
           <Icon name="map" color="orange" />
           <Header.Content>
@@ -41,7 +54,7 @@ export class CommuteRoutesPage extends React.PureComponent {
               We are adding new commute routes everyday
             </Header.Subheader>
           </Header.Content>
-          </Header>
+        </Header>
         <Segment raised>
           <MyMapComponent
             isMarkerShown
@@ -49,6 +62,16 @@ export class CommuteRoutesPage extends React.PureComponent {
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `500px` }} />}
             mapElement={<div style={{ height: `100%` }} />}
+          />
+        </Segment>
+        <Segment>
+          <Iframe
+            url="http:////my.loccate.com/pro/applications/locator/?key=9e625bcd641e6348b290c035586f73ca&objects=377047&map=roadmap"
+            width="100%"
+            height="500px"
+            display="initial"
+            position="relative"
+            allowFullScreen
           />
         </Segment>
       </Container>
