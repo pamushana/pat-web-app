@@ -15,14 +15,13 @@ import { Twitter, Facebook, Linkedin, Whatsapp } from 'react-social-sharing';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
+import Alexis from 'images/Alexis.jpg';
+import Alexis2 from 'images/Alexis2.jpg';
+import Lukaku from 'images/banner.png';
 import makeSelectFleetPage from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 import messages from './messages';
-import Alexis from 'images/alexis.jpg';
-import Alexis2 from 'images/alexis2.jpg';
-import Lukaku from 'images/banner.png';
-
 /* eslint-disable react/prefer-stateless-function */
 export class FleetPage extends React.PureComponent {
   state = { activeIndex: null };
